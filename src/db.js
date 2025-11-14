@@ -4,7 +4,7 @@ const db = new DatabaseSync(':memory:')
 db.exec(`
     CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE'
+    username TEXT UNIQUE,
     password TEXT
     )
     `)
@@ -21,7 +21,7 @@ db.exec(`
         `)
 
 
-        export default db
+ export default db
 
 
 
