@@ -1,37 +1,55 @@
-### GET
+### GET / GET http://localhost:5003
 
-GET http://localhost:5003
+### Register a user 
 
-###
+POST /AUTH/REGISTER 
+POST http://localhost:5003/auth/register Content-Type: application/json
 
-POST http://localhost:5003/auth/register
+{
+"username": "",
+"password": ""
+}
+
+### Login a user 
+
+POST /AUTH/LOGIN 
+POST http://localhost:5003/auth/login 
 Content-Type: application/json
 
 {
-    "username": "lmaooo",
-    "password": "zotamon"
+"username": "", 
+"password": ""
 }
-###
 
-POST http://localhost:5003/auth/login
+### Fetch all todos GET /TODOS (protected) 
+GET http://localhost:5003/todos 
+Authorization: PASTE THE TOKEN FOR TESTING PUROPOSES
+
+### Creates a new todo 
+
+POST /TODOS (protected) 
+
+POST http://localhost:5003/todos 
+Authorization:PASTE THE TOKEN FOR TESTING PUROPOSES 
 Content-Type: application/json
 
 {
-    "username": "lmaooo",
-    "password": "zotamon"
+"task": "Finish coding the projects"
 }
 
-###
+### Update a todo 
 
-GET http://localhost:5003/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMzIyNTc2LCJleHAiOjE3NjM0MDg5NzZ9.Z5enj-pUa5Dc-22IikUNc7JRr3okU5IEgo-l3MnFY9w
-
-###
-
-POST http://localhost:5003/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMzIyNTc2LCJleHAiOjE3NjM0MDg5NzZ9.Z5enj-pUa5Dc-22IikUNc7JRr3okU5IEgo-l3MnFY9w
+PUT /TODOS/:ID (protected) 
+PUT http://localhost:5003/todos/2?page=4 
+Authorization:PASTE THE TOKEN FOR TESTING PUROPOSES
 Content-Type: application/json
 
 {
-    "task": "Finish the coding projects"
+"completed": 
 }
+
+### Delete a todo 
+
+DELETE /TODOS/:ID (protected) 
+DELETE http://localhost:5003/todos/:id 
+Authorization:PASTE THE TOKEN FOR TESTING PUROPOSES
