@@ -8,6 +8,30 @@ POST http://localhost:5003/auth/register
 Content-Type: application/json
 
 {
-    "userName": "lmaooo",
+    "username": "lmaooo",
     "password": "zotamon"
+}
+###
+
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+    "username": "lmaooo",
+    "password": "zotamon"
+}
+
+###
+
+GET http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMzIyNTc2LCJleHAiOjE3NjM0MDg5NzZ9.Z5enj-pUa5Dc-22IikUNc7JRr3okU5IEgo-l3MnFY9w
+
+###
+
+POST http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMzIyNTc2LCJleHAiOjE3NjM0MDg5NzZ9.Z5enj-pUa5Dc-22IikUNc7JRr3okU5IEgo-l3MnFY9w
+Content-Type: application/json
+
+{
+    "task": "Finish the coding projects"
 }
